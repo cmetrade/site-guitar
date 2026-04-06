@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Soul | Explore o Som</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">GUITAR<span>SOUL</span></div>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Modelos</a></li>
+                <li><a href="#">Aulas</a></li>
+                <li><a href="#" class="btn-contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sinta a Vibração das <span class="highlight">Cordas</span></h1>
+            <p>Descubra o universo da música através das melhores guitarras do mundo.</p>
+            <button onclick="mostrarMensagem()">Começar Tour</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="card" onclick="highlightCard(this)">
+            <h3>Stratocaster</h3>
+            <p>O brilho clássico do Blues e Rock.</p>
+        </div>
+        <div class="card" onclick="highlightCard(this)">
+            <h3>Les Paul</h3>
+            <p>O peso e o sustain lendário.</p>
+        </div>
+        <div class="card" onclick="highlightCard(this)">
+            <h3>Telecaster</h3>
+            <p>O "twang" único que conquistou gerações.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
