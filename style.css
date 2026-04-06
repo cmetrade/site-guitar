@@ -1,26 +1,40 @@
-/* Reset Básico */
+/* =========================================
+   CONFIGURAÇÕES GERAIS (RESET)
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --preto-fundo: #0a0a0a;
+    --preto-card: #161616;
+    --azul-neon: #007bff;
+    --azul-hover: #0056b3;
+    --branco: #ffffff;
+    --cinza-texto: #b3b3b3;
 }
 
 body {
-    background-color: #0a0a0a; /* Preto */
-    color: #ffffff; /* Branco */
+    background-color: var(--preto-fundo);
+    color: var(--branco);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Header & Navegação */
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
 header {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 1rem 5%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 1rem 8%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid #007bff; /* Azul */
+    border-bottom: 2px solid var(--azul-neon);
 }
 
 nav {
@@ -30,100 +44,189 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: 800;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .logo span {
-    color: #007bff;
+    color: var(--azul-neon);
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 nav ul li a {
-    color: white;
+    color: var(--branco);
     text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
     transition: 0.3s;
 }
 
 nav ul li a:hover {
-    color: #007bff;
+    color: var(--azul-neon);
 }
 
-/* Hero Section */
+.btn-contato {
+    border: 1px solid var(--azul-neon);
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+.btn-contato:hover {
+    background: var(--azul-neon);
+    color: var(--branco) !important;
+}
+
+/* =========================================
+   SEÇÃO HERO (DESTAQUE)
+   ========================================= */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 20px;
+    font-weight: 900;
 }
 
 .highlight {
-    color: #007bff;
-    text-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+    color: var(--azul-neon);
+    text-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--cinza-texto);
+    max-width: 600px;
+    margin: 0 auto 30px;
 }
 
 button {
-    padding: 12px 30px;
-    background: #007bff;
+    padding: 15px 40px;
+    background: var(--azul-neon);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1rem;
-    transition: 0.4s;
-    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.4s ease;
 }
 
 button:hover {
-    background: #0056b3;
-    box-shadow: 0 0 20px #007bff;
+    background: var(--azul-hover);
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.5);
+    transform: scale(1.05);
 }
 
-/* Seção de Cards */
+/* =========================================
+   CARDS DE PRODUTOS/MODELOS
+   ========================================= */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 50px 5%;
-    background: #111;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 80px 8%;
+    background: #0f0f0f;
 }
 
 .card {
-    background: #1a1a1a;
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid #333;
+    background: var(--preto-card);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #222;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
 }
 
 .card:hover {
-    border-color: #007bff;
-    transform: translateY(-10px);
+    border-color: var(--azul-neon);
+    transform: translateY(-12px);
+    background: #1e1e1e;
 }
 
 .card h3 {
-    color: #007bff;
+    color: var(--azul-neon);
     margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: var(--cinza-texto);
+}
+
+/* =========================================
+   RODAPÉ (FOOTER) - VERSÃO 1.0
+   ========================================= */
+.footer-site {
+    background-color: #000;
+    color: var(--branco);
+    padding: 40px 8%;
+    border-top: 1px solid #222;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    color: var(--cinza-texto);
+}
+
+.version-tag {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: var(--azul-neon);
+    border: 1px solid var(--azul-neon);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        /* Esconde menu simples em telas pequenas */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
 }

@@ -13,6 +13,6 @@ function highlightCard(element) {
     // Adiciona destaque ao card clicado
     element.style.boxShadow = "0 0 20px rgba(0, 123, 255, 0.5)";
     element.style.backgroundColor = "#222";
-    
+
     console.log("Selecionado: " + element.querySelector('h3').innerText);
 }
